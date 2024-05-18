@@ -8,10 +8,11 @@ const Userinfo = () => {
                 <img src="./avatar.png" alt="" />
                 <h2>Patricia Polintan</h2>
             </div>
-            <div className="icons"></div>
-            <img src="./more.png" alt="" />
-            <img src="./video.png" alt="" />
-            <img src="./edit.png" alt="" />
+            <div className="icons">
+                <img src="./more.png" alt="" />
+                <img src="./video.png" alt="" />
+                <img src="./edit.png" alt="" />
+            </div>
         </div >
     )
 }
