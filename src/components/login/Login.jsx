@@ -1,5 +1,6 @@
-import "./login.css";
 import { useState } from 'react';
+import "./login.css";
+import { toast } from "react-toastify";
 
 
 
@@ -8,6 +9,7 @@ const Login = () => {
         file: null,
         url: ""
     });
+
 
     const handleAvatar = (e) => {
         if (e.target.files[0]) {
@@ -18,29 +20,36 @@ const Login = () => {
         }
     };
 
-    return <div className='login'>
+    const handleLogin = e => {
+        e.preventDefault()
+
+    };
+
+    return <div className="login">
         <div className="item">
             <h2>Welcome back, </h2>
-            <form>
+            <form onSubmit={handleLogin}>
                 <input type="text" placeholder="Email" name="email" />
                 <input type="password" placeholder="Password" name="password" />
                 <button>Sign In</button>
             </form>
-            <div className="separator"></div>
-            <div className="item">
-                <h2>Create an Account </h2>
-                <form>
-                    <label htmlFor="file">
-                        <img src={avatar.url || "./avatar.png"} alt="" />
-                        Upload an Image</label>
-                    <input type="file" id="file" style={{ display: "none" }} onCanPlay={handleAvatar} />
-                    <input type="text" placeholder="Username" name="username" />
-                    <input type="text" placeholder="Email" name="email" />
-                    <input type="password" placeholder="Password" name="password" />
-                    <button>Sign In</button>
-                </form>
-            </div>
         </div>
+        <div className="separator"></div>
+        <div className="item">
+            <h2>Create an Account </h2>
+            <form>
+                <label htmlFor="file">
+                    <img src={avatar.url || "./avatar.png"} alt="" />
+                    Upload an Image
+                </label>
+                <input type="file" id="file" style={{ display: "none" }} onChange={handleAvatar} />
+                <input type="text" placeholder="Username" name="username" />
+                <input type="text" placeholder="Email" name="email" />
+                <input type="password" placeholder="Password" name="password" />
+                <button>Sign Up</button>
+            </form>
+        </div>
+
     </div>
 }
 
