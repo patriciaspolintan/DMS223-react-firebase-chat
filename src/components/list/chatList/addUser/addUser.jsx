@@ -4,7 +4,7 @@ import {
     arrayUnion,
     collection,
     doc,
-    getDoc,
+
     getDocs,
     query,
     serverTimestamp,
